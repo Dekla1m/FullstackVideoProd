@@ -1,0 +1,91 @@
+/* базовые стили */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+
+p, h1, h2, h3, h4, h5, h6, .body-small, .body-large, a { 
+    text-decoration: none;
+    line-height: 150%;
+}
+
+h1 {
+    font-size: 36pt;
+    line-height: 150%;
+    font-weight: 350; 
+}
+
+h2 {
+    font-size: 32pt;
+    line-height: 150%;
+    font-weight: 350;
+}
+
+h3 {
+    font-size: 24pt;
+    line-height: 150%;
+    font-weight: 350;
+}
+
+h4 {
+    font-size: 20pt;
+    line-height: 150%;
+    font-weight: 350;
+}
+
+h5 {
+    font-size: 16pt;
+    line-height: 150%;
+    font-weight: 350;
+}
+
+h6 {
+    font-size: 14pt;
+    line-height: 150%;
+    font-weight: 350;
+}
+
+.body-small {
+    font-size: 14pt;
+    line-height: 150%;
+    font-weight: 350;
+}
+
+.body-medium {
+    font-size: 16pt;
+    line-height: 150%;
+    font-weight: 350;
+}
+
+.body-large {
+    font-size: 18pt;
+    line-height: 150%;
+    font-weight: 350;
+}
+
+p {
+    font-size: 16pt; 
+    line-height: 150%;
+    font-weight: 350;
+}
+
+.body-large {
+    font-size: 18pt;
+}
+
+ul {
+    list-style: none; 
+    margin: 0; 
+    padding-left: 0; 
+}
+
+a {
+  color: #bbb;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
