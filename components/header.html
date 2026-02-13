@@ -1,43 +1,98 @@
-<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <strong>VIDEO</strong>STUDIO
-    </a>
-    
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarMenu" class="navbar-menu">
-    <div class="navbar-start">
+<nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        Главная
+        <strong class="has-text-primary">VIDEO</strong>STUDIO
       </a>
-      <a class="navbar-item" href="/about.html">
-        О нас
-      </a>
-      <a class="navbar-item" href="/price.html">
-        Прайс-лист
-      </a>
-      <a class="navbar-item" href="/cases.html">
-        Кейсы
+      
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div class="navbar-end">
-      <div class="navbar-item">
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <!-- Пусто -->
+      </div>
+
+      <div class="navbar-item navbar-center">
         <div class="buttons">
-          <a class="button is-primary is-medium">
-            <strong>Быстрый заказ</strong>
+          <a class="button is-primary is-medium is-rounded">
+            <span class="icon">
+              <i class="fas fa-bolt"></i>
+            </span>
+            <span><strong>Быстрый заказ</strong></span>
           </a>
         </div>
+      </div>
+
+      <div class="navbar-end">
+        <a class="navbar-item" href="/">
+          Главная
+        </a>
+        <a class="navbar-item" href="/about.html">
+          О нас
+        </a>
+        <a class="navbar-item" href="/price.html">
+          Прайс-лист
+        </a>
+        <a class="navbar-item" href="/cases.html">
+          Кейсы
+        </a>
       </div>
     </div>
   </div>
 </nav>
+
+<style>
+.navbar-brand {
+  margin-right: auto;
+}
+
+.navbar-center {
+  flex: 1;
+  justify-content: center;
+  display: flex;
+}
+
+.navbar-end {
+  margin-left: auto;
+}
+
+/* Адаптивная верстка <1024px */
+@media (max-width: 1023px) {
+  .navbar-center {
+    display: none;
+  }
+  
+  .navbar-menu.is-active .navbar-end {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .navbar-menu.is-active .navbar-end .navbar-item {
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .navbar-menu.is-active::after {
+    content: 'Быстрый заказ';
+    display: block;
+    width: calc(100% - 3rem);
+    margin: 0 auto 1rem;
+    padding: 0.75rem 1.5rem;
+    background: #3273dc;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+</style>
 
 <script>
   // Burger menu для мобильных
