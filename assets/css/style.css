@@ -100,7 +100,7 @@ a {
   font-style: italic;
 }
 
-/* Для адаптивности */
+/* Для адаптивности main */
 @media (max-width: 768px) {
   .columns.is-vcentered {
     flex-direction: column-reverse;
@@ -118,4 +118,74 @@ a {
   .columns.is-vcentered > .column.is-6:last-child {
     order: 2;
   }
+}
+
+/* Стилистика для отзывов */
+.vertical-strip {
+  background: linear-gradient(to bottom, #c5a47e 0%, #b5684e 100%);
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.has-border-radius-8 {
+  border-radius: 8px !important;
+}
+
+.qrcode-container img {
+  filter: grayscale(100%);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .vertical-strip {
+    height: 6px !important;
+    width: 100% !important;
+    border-radius: 4px !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+}
+
+.vertical-strip {
+  background: linear-gradient(to bottom, #c5a47e 0%, #b5684e 100%);
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.button.is-primary {
+  background-color: #c7795e !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(199, 121, 94, 0.4);
+}
+
+.button.is-primary:hover {
+  background-color: #b5684e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(199, 121, 94, 0.6);
+}
+
+.button.is-primary:active {
+  transform: translateY(0);
 }
