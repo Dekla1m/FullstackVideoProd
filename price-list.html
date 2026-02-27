@@ -175,6 +175,7 @@
                                 class="input is-medium has-background-grey-dark has-text-white has-text-weight-semibold" 
                                 type="text" 
                                 placeholder="Ваше имя"
+                                id="fullname"
                                 required
                             >
                             </div>
@@ -188,6 +189,7 @@
                                 type="tel" 
                                 placeholder="+7 (___) ___-__-__"
                                 pattern="\+7\s?\(?\d{3}\)?\s?\d{3}-?\d{2}-?\d{2}"
+                                id="phone"
                                 required
                             >
                             </div>
@@ -200,6 +202,7 @@
                                 class="input is-medium has-background-grey-dark has-text-white has-text-weight-semibold" 
                                 type="email" 
                                 placeholder="your@email.com"
+                                id="email"
                                 required
                             >
                             </div>
@@ -212,6 +215,7 @@
                                 class="textarea is-medium has-background-grey-dark has-text-white has-text-weight-semibold" 
                                 placeholder="Опишите ваш проект или вопрос..."
                                 rows="5"
+                                id="mainText"
                                 required
                             ></textarea>
                             </div>
@@ -346,5 +350,7 @@
             document.getElementById('footer-container').innerHTML = data;
             });
     </script>
+    <script src="scripts/consoleLogger.js"></script>
+    <script src="scripts/validation.js"></script>
 </body>
 </html>
