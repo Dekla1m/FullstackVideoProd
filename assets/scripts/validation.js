@@ -1,71 +1,74 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
-    if (!form) return;
+    if (!form) {
+        console.error('Форма не найдена! Проверьте ID в HTML');
+        return;
+    }
     form.addEventListener('submit', function(event) {
-        vent.preventDefault();
+        event.preventDefault();
 
-    // Сбрасываем предыдущие ошибки
-    document.querySelectorAll('.input.is-danger, .textarea.isdanger').forEach(el => {
-    el.classList.remove('is-danger');
-    });
-    document.querySelectorAll('.help.is-danger').forEach(el => el.remove());
+        // Сбрасываем предыдущие ошибки
+        document.querySelectorAll('.input.is-danger, .textarea.is-danger').forEach(el => {
+        el.classList.remove('is-danger');
+        });
+        document.querySelectorAll('.help.is-danger').forEach(el => el.remove());
 
-    let isValid = true;
+        let isValid = true;
 
-    // 1. Проверка ФИО (не пустое, минимум 2 слова)
-    const fullname = document.getElementById('fullname');
-    const fullnameValue = fullname.value.trim();
+        // 1. Проверка ФИО (не пустое, минимум 2 слова)
+        const fullname = document.getElementById('fullname');
+        const fullnameValue = fullname.value.trim();
 
-    if (fullnameValue === '') {
-    showError(fullname, 'Введите фамилию и имя');
-    isValid = false;
-    }
-    else if (fullnameValue.split(' ').length < 2) {
-        showError(fullname, 'Введите фамилию и имя');
-        isValid = false;
-    }
+        if (fullnameValue === '') {
+            showError(fullname, 'Введите фамилию и имя');
+            isValid = false;
+        }
+        else if (fullnameValue.split(' ').length < 2) {
+            showError(fullname, 'Введите фамилию и имя');
+            isValid = false;
+        }
 
-    // 2. Проверка телефона (не пустой, 10 цифр)
-    const phone = document.getElementById('phone');
-    const phoneValue = phone.value.trim();
-    const phoneDigits = phoneValue.replace(/\D/g, '');
+        // 2. Проверка телефона (не пустой, 10 цифр)
+        const phone = document.getElementById('phone');
+        const phoneValue = phone.value.trim();
+        const phoneDigits = phoneValue.replace(/\D/g, '');
 
-    if (phoneValue === '') {
-        showError(phone, 'Введите номер телефона');
-        isValid = false;
-        } 
-    else if (phoneDigits.length < 10) {
-        showError(phone, 'Введите 10 цифр номера');
-        isValid = false;
-    }
+        if (phoneValue === '') {
+            showError(phone, 'Введите номер телефона');
+            isValid = false;
+            } 
+        else if (phoneDigits.length < 10) {
+            showError(phone, 'Введите 10 цифр номера');
+            isValid = false;
+        }
 
-    // 3. Проверка email (не пустой, содержит @ и .)
-    const email = document.getElementById('email');
-    const emailValue = email.value.trim();
+        // 3. Проверка email (не пустой, содержит @ и .)
+        const email = document.getElementById('email');
+        const emailValue = email.value.trim();
 
-    if (emailValue === '') {
-        showError(email, 'Введите email');
-        isValid = false;
-        } 
-    else if (!emailValue.includes('@') || !emailValue.includes('.')) {
-        showError(email, 'Введите корректный email');
-        isValid = false;
-    }
+        if (emailValue === '') {
+            showError(email, 'Введите email');
+            isValid = false;
+            } 
+        else if (!emailValue.includes('@') || !emailValue.includes('.')) {
+            showError(email, 'Введите корректный email');
+            isValid = false;
+        }
 
-    // Если всё корректно - отправляем событие
-    if (isValid) {
-    const formData = {
-        fullname: fullnameValue, 
-        phone: phoneValue,
-        email: emailValu,
-        message: document.getElementById('mainText').value.trim() || '(незаполнено)'
-    };
+        // Если всё корректно - отправляем событие
+        if (isValid) {
+            const formData = {
+                fullname: fullnameValue, 
+                phone: phoneValue,
+                email: emailValue,
+                message: document.getElementById('mainText').value.trim() || '(незаполнено)'
+            };
 
-    const event = new CustomEvent('formValid', { detail: formData });
-    document.dispatchEvent(event);
+            const event = new CustomEvent('formValid', { detail: formData });
+            document.dispatchEvent(event);
 
-    alert('Форма отправлена! Данные в консоли.');
-    }
+            alert('Форма отправлена! Данные в консоли.');
+        }
     });
 
     // Функция показа ошибки
